@@ -57,7 +57,7 @@ export default function OrganizationProfile() {
           ))}
 
           <Textarea
-            label="Intentions for joining Technofest"
+            label="Intentions for joining Innoject"
             rows="5"
             value={form.intentions}
             onChange={(e) =>

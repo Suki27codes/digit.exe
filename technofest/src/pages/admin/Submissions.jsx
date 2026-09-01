@@ -109,21 +109,12 @@ export default function Submissions() {
 
               <div className="mt-5 flex flex-wrap gap-2">
                 <Button
-                  variant="success"
+                  variant="ghost"
                   onClick={() =>
                     updateStatus(project.id, "Approved")
                   }
                 >
                   Approve
-                </Button>
-
-                <Button
-                  variant="danger"
-                  onClick={() =>
-                    updateStatus(project.id, "Rejected")
-                  }
-                >
-                  Reject
                 </Button>
 
                 <Button

@@ -20,14 +20,14 @@ export default function Navbar() {
         <Link
           to="/"
           className="flex items-center gap-2"
-          aria-label="Technofest home"
+          aria-label="Innoject home"
         >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-maroon-700 text-sm font-bold text-white">
             T
           </div>
 
           <span className="text-lg font-bold text-maroon-800">
-            Technofest
+            Innoject
           </span>
         </Link>
 

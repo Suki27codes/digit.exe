@@ -138,4 +138,9 @@ export const adminNavigation = [
     to: "/admin/settings",
     icon: Settings,
   },
+  {
+    label: "Notifications",
+    to: "/admin/notifications",
+    icon: Bell,
+  },
 ];

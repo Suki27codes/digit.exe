@@ -31,13 +31,12 @@ export default function Footer() {
               </div>
 
               <span className="font-bold text-maroon-800">
-                Technofest
+                Innoject
               </span>
             </div>
 
             <p className="mt-4 max-w-sm text-sm leading-6 text-gray-500">
-              A digital platform for showcasing student innovation
-              and creating opportunities for collaboration.
+              Digital Platform for Showcasing Student Innovation.
             </p>
 
             <div className="mt-5 flex gap-2">
@@ -98,7 +97,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-gray-200 pt-6 text-center text-xs text-gray-500">
-          © {new Date().getFullYear()} Technofest. All rights reserved.
+          © {new Date().getFullYear()} Innoject. All rights reserved.
         </div>
       </div>
     </footer>

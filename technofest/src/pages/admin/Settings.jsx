@@ -4,7 +4,7 @@ import Button from "../../components/ui/Button";
 
 export default function Settings() {
   const [settings, setSettings] = useState({
-    eventName: "Technofest 2026",
+    eventName: "Innoject 2026",
     eventDate: "20 November 2026",
     eventLocation: "PNG University of Technology",
     emailNotifications: true,
@@ -27,7 +27,7 @@ export default function Settings() {
 
       <Card>
         <h2 className="text-xl font-semibold">
-          Technofest Settings
+          Innoject Settings
         </h2>
 
         <div className="mt-5 space-y-4">

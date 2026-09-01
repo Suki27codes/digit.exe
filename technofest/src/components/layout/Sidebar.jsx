@@ -24,7 +24,7 @@ export default function Sidebar({
       >
         <div className="flex h-16 items-center justify-between border-b border-gray-200 px-5">
           <span className="font-bold text-maroon-800">
-            Technofest
+            Innoject
           </span>
 
           <button

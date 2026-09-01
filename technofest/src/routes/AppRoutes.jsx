@@ -1,320 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import Login from "../pages/public/auth/Login";
-import Signup from "../pages/public/auth/Signup";
-import OrganizationDashboard from "../pages/organization/Dashboard";
-import ExploreProjects from "../pages/organization/ExploreProjects";
-import SavedProjects from "../pages/organization/SavedProjects";
-import OrganizationProfile from "../pages/organization/Profile";
-import Internships from "../pages/organization/Internships";
-import Partnerships from "../pages/organization/Partnerships";
-import DashboardLayout from "../components/layout/DashboardLayout";
-import {
-  adminNavigation,
-  mentorNavigation,
-  organizationNavigation,
-} from "../constants/navigation";
-import MentorDashboard from "../pages/mentor/Dashboard";
-import AssignedProjects from "../pages/mentor/AssignedProjects";
-import MentorProfile from "../pages/mentor/Profile";
-import AdminDashboard from "../pages/admin/Dashboard";
-import Submissions from "../pages/admin/Submissions";
-import Users from "../pages/admin/Users";
-import Mentors from "../pages/admin/Mentors";
-import Categories from "../pages/admin/Categories";
-import Reports from "../pages/admin/Reports";
-import Settings from "../pages/admin/Settings";
-
-function Placeholder({ title }) {
-  return (
-    <div className="flex min-h-[60vh] items-center justify-center">
-      <div className="text-center">
-        <p className="text-sm font-medium text-maroon-700">
-          Technofest
-        </p>
-
-        <h1 className="mt-2 text-2xl font-bold text-gray-900">
-          {title}
-        </h1>
-
-        <p className="mt-2 text-sm text-gray-500">
-          This page will be implemented by the assigned collaborator.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-export default function AppRoutes() {
-  return (
-    <Routes>
-      {/* PUBLIC */}
-      <Route path="/" element={<Placeholder title="Home" />} />
-      <Route path="/explore" element={<Placeholder title="Explore" />} />
-      <Route
-        path="/projects/:id"
-        element={<Placeholder title="Project Details" />}
-      />
-      <Route
-        path="/about"
-        element={<Placeholder title="About" />}
-      />
-      <Route
-        path="/faq"
-        element={<Placeholder title="FAQ" />}
-      />
-      <Route
-        path="/contact"
-        element={<Placeholder title="Contact" />}
-      />
-
-      {/* AUTH */}
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route
-        path="/forgot-password"
-        element={<Placeholder title="Forgot Password" />}
-      />
-
-      {/* STUDENT */}
-      <Route
-        path="/student"
-        element={<Placeholder title="Student Dashboard" />}
-      />
-      <Route
-        path="/student/projects"
-        element={<Placeholder title="Student Projects" />}
-      />
-      <Route
-        path="/student/projects/new"
-        element={<Placeholder title="Create Project" />}
-      />
-      <Route
-        path="/student/projects/:id"
-        element={<Placeholder title="Student Project" />}
-      />
-      <Route
-        path="/student/projects/:id/edit"
-        element={<Placeholder title="Edit Project" />}
-      />
-      <Route
-        path="/student/projects/:id/preview"
-        element={<Placeholder title="Project Preview" />}
-      />
-      <Route
-        path="/student/collaboration"
-        element={<Placeholder title="Collaboration" />}
-      />
-      <Route
-        path="/student/mentors"
-        element={<Placeholder title="Mentors" />}
-      />
-      <Route
-        path="/student/notifications"
-        element={<Placeholder title="Notifications" />}
-      />
-      <Route
-        path="/student/profile"
-        element={<Placeholder title="Student Profile" />}
-      />
-
-      {/* ORGANIZATION */}
-      <Route
-        path="/organization"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <OrganizationDashboard />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/organization/projects"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <ExploreProjects />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/organization/saved"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <SavedProjects />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/organization/internships"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <Internships />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/organization/partnerships"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <Partnerships />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/organization/profile"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <OrganizationProfile />
-          </DashboardLayout>
-        }
-      />
-
-      {/* MENTOR */}
-      <Route
-        path="/mentor"
-        element={
-          <DashboardLayout
-            sidebarItems={mentorNavigation}
-            user={{ name: "Mentor", role: "Mentor" }}
-          >
-            <MentorDashboard />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/mentor/projects"
-        element={
-          <DashboardLayout
-            sidebarItems={mentorNavigation}
-            user={{ name: "Mentor", role: "Mentor" }}
-          >
-            <AssignedProjects />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/mentor/projects/:id"
-        element={<Placeholder title="Review Project" />}
-      />
-      <Route
-        path="/mentor/profile"
-        element={
-          <DashboardLayout
-            sidebarItems={mentorNavigation}
-            user={{ name: "Mentor", role: "Mentor" }}
-          >
-            <MentorProfile />
-          </DashboardLayout>
-        }
-      />
-
-      {/* ADMIN */}
-      <Route
-        path="/admin"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <AdminDashboard />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/admin/submissions"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Submissions />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/admin/users"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Users />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/admin/organizations"
-        element={<Placeholder title="Organizations" />}
-      />
-      <Route
-        path="/admin/mentors"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Mentors />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/admin/categories"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Categories />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/admin/reports"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Reports />
-          </DashboardLayout>
-        }
-      />
-      <Route
-        path="/admin/settings"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Settings />
-          </DashboardLayout>
-        }
-      />
-
-      {/* FALLBACK */}
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  );
-}
-import { Navigate, Route, Routes } from "react-router-dom";
-
 import Home from "../pages/public/Home";
 import Explore from "../pages/public/Explore";
 import ProjectDetailsPage from "../pages/public/ProjectDetailsPage";
@@ -333,7 +18,18 @@ import {
   adminNavigation,
   mentorNavigation,
   organizationNavigation,
+  studentNavigation,
 } from "../constants/navigation";
+
+import StudentDashboard from "../pages/student/Dashboard";
+import StudentProjects from "../pages/student/Projects";
+import CreateProject from "../pages/student/CreateProject";
+import EditProject from "../pages/student/EditProject";
+import ProjectPreview from "../pages/student/ProjectPreview";
+import StudentCollaboration from "../pages/student/Collaboration";
+import StudentMentors from "../pages/student/Mentors";
+import StudentNotifications from "../pages/student/Notifications";
+import StudentProfile from "../pages/student/Profile";
 
 import OrganizationDashboard from "../pages/organization/Dashboard";
 import ExploreProjects from "../pages/organization/ExploreProjects";
@@ -344,6 +40,7 @@ import Partnerships from "../pages/organization/Partnerships";
 
 import MentorDashboard from "../pages/mentor/Dashboard";
 import AssignedProjects from "../pages/mentor/AssignedProjects";
+import ReviewProject from "../pages/mentor/ReviewProjects";
 import MentorProfile from "../pages/mentor/Profile";
 
 import AdminDashboard from "../pages/admin/Dashboard";
@@ -355,350 +52,230 @@ import Categories from "../pages/admin/Categories";
 import Reports from "../pages/admin/Reports";
 import Settings from "../pages/admin/Settings";
 
-function Placeholder({ title }) {
+import ProtectedRoute from "./ProtectedRoute";
+import { useAuth } from "../context/AuthContext";
+
+// Helper to build a role-restricted protected dashboard route
+function Protected({ role, nav, user, children }) {
   return (
-    <div className="flex min-h-[60vh] items-center justify-center">
-      <div className="text-center">
-        <p className="text-sm font-medium text-maroon-700">
-          Technofest
-        </p>
-
-        <h1 className="mt-2 text-2xl font-bold text-gray-900">
-          {title}
-        </h1>
-
-        <p className="mt-2 text-sm text-gray-500">
-          This page will be implemented by the assigned collaborator.
-        </p>
-      </div>
-    </div>
+    <ProtectedRoute allowedRoles={[role]}>
+      <DashboardLayout sidebarItems={nav} user={user}>
+        {children}
+      </DashboardLayout>
+    </ProtectedRoute>
   );
 }
 
 export default function AppRoutes() {
+  const { displayName, role } = useAuth();
+
+  const studentUser  = { name: displayName, role: "Student" };
+  const orgUser      = { name: displayName, role: "Organization" };
+  const mentorUser   = { name: displayName, role: "Mentor" };
+  const adminUser    = { name: displayName, role: "Admin" };
+
   return (
     <Routes>
       {/* =========================
-          PERSON 1 — PUBLIC
+          PUBLIC ROUTES
           ========================= */}
 
       <Route path="/" element={<Home />} />
-
       <Route path="/explore" element={<Explore />} />
-
-      <Route
-        path="/projects/:id"
-        element={<ProjectDetailsPage />}
-      />
-
+      <Route path="/projects/:id" element={<ProjectDetailsPage />} />
       <Route path="/about" element={<About />} />
-
       <Route path="/faq" element={<FAQ />} />
-
       <Route path="/contact" element={<Contact />} />
-
       <Route path="/privacy" element={<Privacy />} />
-
       <Route path="/terms" element={<Terms />} />
 
       {/* =========================
-          PERSON 1 — AUTH
+          AUTH ROUTES
           ========================= */}
 
       <Route path="/login" element={<Login />} />
-
       <Route path="/signup" element={<Signup />} />
-
-      <Route
-        path="/forgot-password"
-        element={<ForgotPassword />}
-      />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
 
       {/* =========================
-          PERSON 2 — STUDENT
-          Keep placeholders for now
+          STUDENT ROUTES  (role: student)
           ========================= */}
 
-      <Route
-        path="/student"
-        element={
-          <Placeholder title="Student Dashboard" />
-        }
-      />
+      <Route path="/student" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <StudentDashboard />
+        </Protected>
+      } />
 
-      <Route
-        path="/student/projects"
-        element={
-          <Placeholder title="Student Projects" />
-        }
-      />
+      <Route path="/student/projects" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <StudentProjects />
+        </Protected>
+      } />
 
-      <Route
-        path="/student/projects/new"
-        element={<Placeholder title="Create Project" />}
-      />
+      <Route path="/student/projects/new" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <CreateProject />
+        </Protected>
+      } />
 
-      <Route
-        path="/student/projects/:id"
-        element={
-          <Placeholder title="Student Project" />
-        }
-      />
+      <Route path="/student/projects/:id" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <ProjectPreview />
+        </Protected>
+      } />
 
-      <Route
-        path="/student/projects/:id/edit"
-        element={
-          <Placeholder title="Edit Project" />
-        }
-      />
+      <Route path="/student/projects/:id/edit" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <EditProject />
+        </Protected>
+      } />
 
-      <Route
-        path="/student/collaboration"
-        element={
-          <Placeholder title="Collaboration" />
-        }
-      />
+      <Route path="/student/collaboration" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <StudentCollaboration />
+        </Protected>
+      } />
 
-      <Route
-        path="/student/mentors"
-        element={<Placeholder title="Mentors" />}
-      />
+      <Route path="/student/mentors" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <StudentMentors />
+        </Protected>
+      } />
 
-      <Route
-        path="/student/notifications"
-        element={
-          <Placeholder title="Notifications" />
-        }
-      />
+      <Route path="/student/notifications" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <StudentNotifications />
+        </Protected>
+      } />
 
-      <Route
-        path="/student/profile"
-        element={
-          <Placeholder title="Student Profile" />
-        }
-      />
+      <Route path="/student/profile" element={
+        <Protected role="student" nav={studentNavigation} user={studentUser}>
+          <StudentProfile />
+        </Protected>
+      } />
 
       {/* =========================
-          PERSON 2 — ORGANIZATION
+          ORGANIZATION ROUTES  (role: organization)
           ========================= */}
 
-      <Route
-        path="/organization"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <OrganizationDashboard />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/organization" element={
+        <Protected role="organization" nav={organizationNavigation} user={orgUser}>
+          <OrganizationDashboard />
+        </Protected>
+      } />
 
-      <Route
-        path="/organization/projects"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <ExploreProjects />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/organization/projects" element={
+        <Protected role="organization" nav={organizationNavigation} user={orgUser}>
+          <ExploreProjects />
+        </Protected>
+      } />
 
-      <Route
-        path="/organization/saved"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <SavedProjects />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/organization/saved" element={
+        <Protected role="organization" nav={organizationNavigation} user={orgUser}>
+          <SavedProjects />
+        </Protected>
+      } />
 
-      <Route
-        path="/organization/internships"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <Internships />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/organization/internships" element={
+        <Protected role="organization" nav={organizationNavigation} user={orgUser}>
+          <Internships />
+        </Protected>
+      } />
 
-      <Route
-        path="/organization/partnerships"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <Partnerships />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/organization/partnerships" element={
+        <Protected role="organization" nav={organizationNavigation} user={orgUser}>
+          <Partnerships />
+        </Protected>
+      } />
 
-      <Route
-        path="/organization/profile"
-        element={
-          <DashboardLayout
-            sidebarItems={organizationNavigation}
-            user={{ name: "Organization", role: "Organization" }}
-          >
-            <OrganizationProfile />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/organization/profile" element={
+        <Protected role="organization" nav={organizationNavigation} user={orgUser}>
+          <OrganizationProfile />
+        </Protected>
+      } />
 
       {/* =========================
-          PERSON 3 — MENTOR
+          MENTOR ROUTES  (role: mentor)
           ========================= */}
 
-      <Route
-        path="/mentor"
-        element={
-          <DashboardLayout
-            sidebarItems={mentorNavigation}
-            user={{ name: "Mentor", role: "Mentor" }}
-          >
-            <MentorDashboard />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/mentor" element={
+        <Protected role="mentor" nav={mentorNavigation} user={mentorUser}>
+          <MentorDashboard />
+        </Protected>
+      } />
 
-      <Route
-        path="/mentor/projects"
-        element={
-          <DashboardLayout
-            sidebarItems={mentorNavigation}
-            user={{ name: "Mentor", role: "Mentor" }}
-          >
-            <AssignedProjects />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/mentor/projects" element={
+        <Protected role="mentor" nav={mentorNavigation} user={mentorUser}>
+          <AssignedProjects />
+        </Protected>
+      } />
 
-      <Route
-        path="/mentor/projects/:id"
-        element={<Placeholder title="Review Project" />}
-      />
+      <Route path="/mentor/projects/:id" element={
+        <Protected role="mentor" nav={mentorNavigation} user={mentorUser}>
+          <ReviewProject />
+        </Protected>
+      } />
 
-      <Route
-        path="/mentor/profile"
-        element={
-          <DashboardLayout
-            sidebarItems={mentorNavigation}
-            user={{ name: "Mentor", role: "Mentor" }}
-          >
-            <MentorProfile />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/mentor/profile" element={
+        <Protected role="mentor" nav={mentorNavigation} user={mentorUser}>
+          <MentorProfile />
+        </Protected>
+      } />
 
       {/* =========================
-          PERSON 3 — ADMIN
+          ADMIN ROUTES  (role: admin)
           ========================= */}
 
-      <Route
-        path="/admin"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <AdminDashboard />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/admin" element={
+        <Protected role="admin" nav={adminNavigation} user={adminUser}>
+          <AdminDashboard />
+        </Protected>
+      } />
 
-      <Route
-        path="/admin/submissions"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Submissions />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/admin/submissions" element={
+        <Protected role="admin" nav={adminNavigation} user={adminUser}>
+          <Submissions />
+        </Protected>
+      } />
 
-      <Route
-        path="/admin/users"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Users />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/admin/users" element={
+        <Protected role="admin" nav={adminNavigation} user={adminUser}>
+          <Users />
+        </Protected>
+      } />
 
-      <Route
-        path="/admin/organizations"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Organizations />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/admin/organizations" element={
+        <Protected role="admin" nav={adminNavigation} user={adminUser}>
+          <Organizations />
+        </Protected>
+      } />
 
-      <Route
-        path="/admin/mentors"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Mentors />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/admin/mentors" element={
+        <Protected role="admin" nav={adminNavigation} user={adminUser}>
+          <Mentors />
+        </Protected>
+      } />
 
-      <Route
-        path="/admin/categories"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Categories />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/admin/categories" element={
+        <Protected role="admin" nav={adminNavigation} user={adminUser}>
+          <Categories />
+        </Protected>
+      } />
 
-      <Route
-        path="/admin/reports"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Reports />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/admin/reports" element={
+        <Protected role="admin" nav={adminNavigation} user={adminUser}>
+          <Reports />
+        </Protected>
+      } />
 
-      <Route
-        path="/admin/settings"
-        element={
-          <DashboardLayout
-            sidebarItems={adminNavigation}
-            user={{ name: "Admin", role: "Admin" }}
-          >
-            <Settings />
-          </DashboardLayout>
-        }
-      />
+      <Route path="/admin/settings" element={
+        <Protected role="admin" nav={adminNavigation} user={adminUser}>
+          <Settings />
+        </Protected>
+      } />
 
+      {/* FALLBACK */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
