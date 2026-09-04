@@ -7,7 +7,7 @@ export default function AdminDashboard() {
     <div className="space-y-6 text-center">
       <PageHeader
         title="Admin Dashboard"
-        description="Manage the Technofest platform."
+        description="Manage the Innoject platform."
       />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

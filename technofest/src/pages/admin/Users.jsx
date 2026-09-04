@@ -96,31 +96,13 @@ export default function Users() {
                   </Badge>
                 </td>
 
-                <td className="flex gap-2 p-4">
+                <td className="p-4">
                   <Button
                     onClick={() =>
                       alert(`Viewing ${user.name}`)
                     }
                   >
                     View
-                  </Button>
-
-                  <Button
-                    variant={
-                      active[user.id]
-                        ? "danger"
-                        : "success"
-                    }
-                    onClick={() =>
-                      setActive({
-                        ...active,
-                        [user.id]: !active[user.id],
-                      })
-                    }
-                  >
-                    {active[user.id]
-                      ? "Deactivate"
-                      : "Activate"}
                   </Button>
                 </td>
               </tr>

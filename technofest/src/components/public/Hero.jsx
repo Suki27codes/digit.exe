@@ -18,7 +18,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg">
-            Technofest connects student innovators, organizations,
+            Innoject connects student innovators, organizations,
             mentors, and communities through one platform for
             discovering and showcasing innovation.
           </p>

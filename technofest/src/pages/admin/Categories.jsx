@@ -89,15 +89,6 @@ export default function Categories() {
                 >
                   Edit
                 </Button>
-
-                <Button
-                  variant="danger"
-                  onClick={() =>
-                    deleteCategory(category)
-                  }
-                >
-                  Delete
-                </Button>
               </div>
             </div>
           ))}
